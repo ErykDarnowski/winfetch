@@ -442,6 +442,28 @@ $img = if (-not $noimage) {
                 "${e}[${t};34m                       ````````''*::cll"
                 "${e}[${t};34m                                 ````"
             )
+        } elseif ($logo -eq "Windows 10 alt" -Or $logo -eq "Windows 8.1 alt" -Or $logo -eq "Windows 8 alt") {
+            $COLUMNS = 34
+            @(
+                "${e}[${t};34m                           .oodMMMM"
+                "${e}[${t};34m                  .oodMMMMMMMMMMMMM"
+                "${e}[${t};34m      ..oodMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34moodMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34mMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34mMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34mMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34mMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34mMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34m                                   "
+                "${e}[${t};34mMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34mMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34mMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34mMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34mMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34m `^^^^^^MMMMMMM  MMMMMMMMMMMMMMMMMMM"
+                "${e}[${t};34m        ````^^^^  ^^MMMMMMMMMMMMMMMMM"
+                "${e}[${t};34m                       ````^^^^^^MMMM"
+            )
         } elseif ($logo -eq "Windows 7" -Or $logo -eq "Windows Vista" -Or $logo -eq "Windows XP") {
             $COLUMNS = 35
             @(
@@ -475,7 +497,7 @@ $img = if (-not $noimage) {
                 "${e}[${t};34m|______|${e}[33m|______|"
             )
         } else {
-            Write-Error 'The only version logos supported are Windows 11, Windows 10/8.1/8, Windows 7/Vista/XP and Microsoft.'
+            Write-Error 'The only version logos supported are Windows 11, Windows 10/8.1/8, Windows 10/8.1/8 alt, Windows 7/Vista/XP and Microsoft.'
             exit 1
         }
     }
