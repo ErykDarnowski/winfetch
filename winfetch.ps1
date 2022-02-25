@@ -34,6 +34,8 @@
     Do not display any image or logo; display information only.
 .PARAMETER logo
     Sets the version of Windows to derive the logo from.
+.PARAMETER breaklinechar
+    Sets char that's used to print a line separating the host and other info.
 .PARAMETER imgwidth
     Specify width for image/logo. Default is 35.
 .PARAMETER blink
@@ -71,6 +73,7 @@ param(
     [string][alias('c')]$configpath,
     [switch][alias('n')]$noimage,
     [string][alias('l')]$logo,
+    [string][alias('q')]$breaklinechar,
     [switch][alias('b')]$blink,
     [switch][alias('s')]$stripansi,
     [switch][alias('a')]$all,
@@ -112,6 +115,9 @@ $defaultConfig = @'
 
 # Set the version of Windows to derive the logo from.
 # $logo = "Windows 10"
+
+# Specify breakline char
+# $breaklinechar = "-"
 
 # Specify width for image/logo
 # $imgwidth = 40
@@ -530,7 +536,7 @@ function info_dashes {
     $length = [System.Environment]::UserName.Length + $env:COMPUTERNAME.Length + 1
     return @{
         title   = ""
-        content = "-" * $length
+        content = $breaklinechar * $length
     }
 }
 
