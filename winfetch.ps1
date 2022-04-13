@@ -108,38 +108,20 @@ $defaultConfig = @'
 # ===== WINFETCH CONFIGURATION =====
 
 # $image = "~/winfetch.png"
-# $noimage = $true
-
-# Display image using ASCII characters
-# $ascii = $true
 
 # Set the version of Windows to derive the logo from.
-# $logo = "Windows 10"
+$logo = "Windows 10 alt"
 
 # Specify breakline char
-# $breaklinechar = "-"
-
-# Specify width for image/logo
-# $imgwidth = 40
-
-# Make the logo blink
-# $blink = $true
+$breaklinechar = "-"
 
 # Display all built-in info segments.
 # $all = $true
 
-# Add a custom info line
-# function info_custom_time {
-#     return @{
-#         title = "Time"
-#         content = (Get-Date)
-#     }
-# }
-
 # Configure which disks are shown
 # $ShowDisks = @("C:", "D:")
 # Show all available disks
-# $ShowDisks = @("*")
+$ShowDisks = @("*")
 
 # Configure which package managers are shown
 # disabling unused ones will improve speed
@@ -161,42 +143,42 @@ $defaultConfig = @'
 # 'bar' is for bar only.
 # 'textbar' is for text + bar.
 # 'bartext' is for bar + text.
-# $cpustyle = 'bar'
-# $memorystyle = 'textbar'
+# $cpustyle = 'bartext'
+# $memorystyle = 'bartext'
 # $diskstyle = 'bartext'
-# $batterystyle = 'bartext'
 
 
-# Remove the '#' from any of the lines in
-# the following to **enable** their output.
+function info_custom_time {
+    return @{
+        title = "Time"
+        content = (Get-Date)
+    }
+}
 
 @(
     "title"
     "dashes"
     "os"
-    "computer"
+    #"computer"
     "kernel"
     "motherboard"
-    # "custom_time"  # use custom info line
+    "custom_time"
     "uptime"
-    # "ps_pkgs"  # takes some time
+    "ps_pkgs"
     "pkgs"
     "pwsh"
     "resolution"
     "terminal"
-    # "theme"
+    "theme"
     "cpu"
     "gpu"
-    # "cpu_usage"  # takes some time
+    "cpu_usage"
     "memory"
     "disk"
-    # "battery"
-    # "locale"
-    # "weather"
-    # "local_ip"
-    # "public_ip"
+    "local_ip"
+    "public_ip"
     "blank"
-    "colorbar"
+    "weather"
 )
 
 '@
